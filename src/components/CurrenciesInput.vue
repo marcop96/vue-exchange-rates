@@ -113,7 +113,6 @@ function getCurrencies() {
 }
 
 function getData() {
-  resultAreaClass.value = "";
   if (hasAmountValue.value == false) {
     amountHasError.value = true;
   } else {
@@ -132,6 +131,7 @@ function getData() {
     finalSelectorHasError.value = false;
   }
   if (amount.value > 0 && initialValue.value != "" && finalValue.value != "") {
+    resultAreaClass.value = "";
     const baseCurrency = ref("");
     const targetCurrency = ref("");
     const conversionRate = ref("");
