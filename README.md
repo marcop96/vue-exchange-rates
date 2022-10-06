@@ -1,1 +1,1 @@
-Exchange rate website refactored with Vue!
+With this project I learned the basics of Vue and how to interact with the DOM 
