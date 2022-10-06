@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-col sm:flex-row">
     <div>
       <label for="amount" class="block text-2xl font-semibold text-gray-700"
         >Amount</label
@@ -64,7 +64,10 @@
   </div>
 
   <div>
-    <div class="result-container flex flex-col h-auto justify-center">
+    <div
+      class="result-container flex flex-col h-auto justify-center"
+      v-bind:class="resultAreaClass"
+    >
       <span
         class="p-3 rounded-lg flex flex-col h-auto justify-center shadow-lg self-center bg-blue-500 text-white font-bold"
         >{{ resultText }}</span
@@ -84,6 +87,8 @@ const hasAmountValue = computed(() => amount.value > 0);
 const amountHasError = ref(false);
 const initialSelectorHasError = ref(false);
 const finalSelectorHasError = ref(false);
+const resultAreaClass = ref("hidden");
+
 const amountClass = computed(() => ({
   "border-red-500": amountHasError.value, //    inputClass if hasError =true, puts error in amountclass
 }));
@@ -108,6 +113,7 @@ function getCurrencies() {
 }
 
 function getData() {
+  resultAreaClass.value = "";
   if (hasAmountValue.value == false) {
     amountHasError.value = true;
   } else {
