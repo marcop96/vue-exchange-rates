@@ -85,13 +85,13 @@ const amountHasError = ref(false);
 const initialSelectorHasError = ref(false);
 const finalSelectorHasError = ref(false);
 const amountClass = computed(() => ({
-  "border-red-500": amountHasError.value, // si hasError -> true pega error en   inputClass
+  "border-red-500": amountHasError.value, //    inputClass if hasError =true, puts error in amountclass
 }));
 const initialSelectorClass = computed(() => ({
-  "border-red-500": initialSelectorHasError.value, // si hasError -> true pega error en   inputClass
+  "border-red-500": initialSelectorHasError.value, //  inputClass if hasError =true, puts error in amountclass
 }));
 const finalSelectorClass = computed(() => ({
-  "border-red-500": finalSelectorHasError.value, // si hasError -> true pega error en   inputClass
+  "border-red-500": finalSelectorHasError.value, //  inputClass if hasError =true, puts error in amountclass
 }));
 
 const hasInitialValue = computed(() => initialValue.value.length > 0);
